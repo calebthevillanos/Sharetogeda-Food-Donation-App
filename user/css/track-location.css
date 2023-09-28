@@ -1,0 +1,93 @@
+body {
+    height: 100vh;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    background-color: #FFF;
+    margin: 7vh 3vw;
+    padding: 3vh 4vw 5vh;
+    height: calc(100vh - 20vh);
+}
+
+main > .top-info {
+    position: relative;
+    text-align: center;
+}
+
+.top-info #back-arrow {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+#map {
+    margin-top: 5vh;
+    padding: 0 2vw;
+    width: 100%;
+    height: 60%;
+}
+
+#map iframe {
+    width: 100%;
+    height: 100%;
+}
+
+#legend-container {
+    margin-top: 3vh;
+}
+
+#legend-container .legend-title {
+    margin-bottom:  4vh;
+}
+
+#legends {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 0 2vw;
+}
+
+.legend {
+    display: flex;
+}
+
+.legend .content {
+    margin-left: .5vw;
+}
+
+#vehicle-content {
+    align-self: center;
+}
+
+@media screen and (max-width: 700px) {
+    .top-info #back-arrow {left: 4vw;}
+    #map {padding: 0 4vw;}
+    #legend-container {padding-left: 4vw;}
+    #legends {grid-template-columns: auto auto;}
+    .legend {margin-bottom: 2vh;}
+    .legend:nth-of-type(3) {grid-column: 1 / 3;justify-self: center;}
+}
+
+@media screen and (max-width: 623px) {
+    #legends {justify-content: space-between;}
+}
+
+@media screen and (max-width: 466px) {
+    .top-info #back-arrow, .top-info h1 {font-size: 1.5rem;}
+    #legends {font-size: .9rem;}
+}
+
+@media screen and (max-width: 420px) {
+    main {height: initial;}
+    #legends {grid-template-columns: auto;}
+    .legend {grid-column: 1 / 3;}
+    .legend:nth-of-type(3) {justify-self: initial;}
+    .legend .content {margin-left: 3vw;}
+}
+
+@media screen and (max-width: 320px) {
+    .top-info #back-arrow, .top-info h1 {font-size: 1.2rem;}
+}

@@ -1,0 +1,216 @@
+body {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+main {
+    width: 40%;
+}
+
+main h1, main h2, main h3 {
+    margin-top: 8vh;
+    margin-left: 7vw;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #000;
+}
+
+form#registration-form, form#login-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10vh;
+    margin-left: 7vw;
+    width: 25vw;
+    gap: 2vh;
+}
+
+form#login-form a, form#registration-form a {
+    align-self: center;
+    padding: 0;
+    width: fit-content;
+    color: inherit;
+    font-size: .8rem;
+    font-weight: 500;
+    text-decoration: none;
+    text-align: center;
+}
+
+form#login-form a:hover, form#registration-form a:hover {
+    text-decoration: underline;
+    color: #312c2e;
+}
+
+form#login-form a.signup, form#registration-form a.login {
+    align-self: flex-start;    
+}
+
+.entry {
+    display: flex;
+    flex-direction: column;
+}
+
+.entry label {
+    font-size: .8rem;
+    font-weight: 600;
+}
+
+.entry .input {
+    display: flex;
+    flex-direction: row;
+    margin-top: .8vh;
+    border: 1px solid #000;
+    background-color: #E5EBF9;
+}
+
+.entry .input i:not(.dt) {
+    padding: 10px;
+    background-color: #EEF2F5;
+    color: var(--font-color);
+    font-size: .8rem;
+}
+
+.entry .input i.dt {
+    font-size: .7rem;
+    align-self: center;
+    padding-right: .5vw;
+    padding-left: .5vw;
+}
+
+.entry .input i.dt:hover {
+    cursor: pointer;
+}
+
+.entry .input input {
+    padding-left: .5vw;
+    width: 100%;
+    border: none;
+    color: #000;
+    background-color: #E5EBF9;
+    font-size: 1rem;
+}
+
+.entry .input input:focus {
+    background-color: #FFF;
+    outline: none;
+}
+
+input[type="submit"] {
+    margin-top: 1vw;
+    padding: 10px 0;
+    width: 100%;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    background-color: #3C59F4;
+    color: #FFF;
+    font-weight: 600;
+}
+
+input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: #312c2e;
+}
+
+aside {
+    width: calc(60% - 1vw);
+}
+
+aside #logo {
+    margin-top: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    transform: translateY(-100%);
+    width: 40vw;
+    height: 30vh;
+}
+
+aside #logo img {
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (max-width: 1024px) {
+    main {
+        width: 45%;
+    }
+
+    form#registration-form, form#login-form {
+        width: 30vw;
+    }
+
+    aside #logo {
+        transform: translateY(-50%);
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .entry .input input {
+        font-size: .9rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    main {
+        width: 60%;
+    }
+
+    form#registration-form, form#login-form {
+        width: 40vw;
+    }
+
+    aside #logo {
+        transform: translateY(-10%);
+    }
+}
+
+@media screen and (max-width: 700px) {
+    main {
+        width: 100%;
+    }
+
+    form#registration-form, form#login-form {
+        width: 45vw;
+    }
+
+    aside #logo {
+        transform: rotate(90deg) translateX(30%);
+    }
+}
+
+@media screen and (max-width: 500px) {
+    form#registration-form, form#login-form {
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+    }
+
+    .vertical-separator {
+        display: none;
+    }
+
+    aside {
+        position: absolute;
+        right: 0;
+        background-color: black;
+        width: 30vw;
+    }
+    
+    aside #logo {
+        margin-top: 0;
+        width: 100%;
+        height: fit-content;
+        transform: none;
+    }
+}
+
+@media screen and (max-width: 470px) {
+    main h2 {
+        margin-top: 18vh;
+    }
+}
+
+@media screen and (max-width: 280px) {
+    main h2 {
+        font-size: 1.2rem;
+    }
+}

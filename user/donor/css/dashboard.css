@@ -1,0 +1,17 @@
+@media screen and (max-width: 1160px) {
+    #container span:not(.child) {
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 970px) {
+    #container span:not(.child) {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    #container span:not(.child) {
+        font-size: 1.5rem;
+    }
+}

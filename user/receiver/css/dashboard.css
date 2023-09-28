@@ -1,0 +1,30 @@
+#settings {
+    display: none !important;
+}
+
+@media screen and (max-width: 950px) {
+    #container span:not(.child) {
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 798px) {
+    #container span:not(.child) {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 648px) {
+    #container span:not(.child) {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 473px) {
+    #container span:not(.child) {
+        font-size: 1.4rem;
+    }
+    #step-five {
+        transform: translateY(8.5%);
+    }
+}

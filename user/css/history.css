@@ -1,0 +1,140 @@
+div:not(.view-detail) {
+    background-color: #FFF;
+    margin: 7vh 3vw;
+    padding: 5vh 4vw;
+    overflow: hidden;
+}
+
+table {
+    margin: 2vw 5vw;
+    text-align: left;
+    width: 100%;
+    border-collapse: collapse;
+    /* background-color: #4aeef1; */
+}
+
+#header {
+    color: #FFF;
+    border-bottom: solid #000;
+}
+
+tr {
+    width: 100%;
+    transition: all .2s ease-in-out;
+}
+
+#no-records td {
+    color: red;
+    display: none;
+}
+
+#no-records.active td {
+    display: table-cell;
+}
+
+/* tr:not(#header):hover {
+    cursor: pointer;
+    box-shadow: 0px 2px 5px 0px #777;
+} */
+
+th {
+    color: var(--font-color);
+    z-index: 1;
+    font-weight: normal;
+    padding: 3vh 1vw;
+}
+
+td {
+    color: var(--font-color);
+    padding: 4vh 1vw;
+}
+
+td:last-of-type, td:nth-last-of-type(2) {
+    text-align: left !important;
+    /* padding-left: 7%; */
+}
+
+td:last-of-type {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 15%;
+}
+
+.view-detail {
+    width: 35%;
+}
+
+.view-detail button {
+    padding: 1vh 0;
+    height: 100%;
+    width: 100%;
+    font-size: .9rem;
+    letter-spacing: .02rem;
+    background-color: #3C59F4;
+    color: #FFF;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.view-detail button:hover {
+    background-color: #2740B1;
+}
+
+@media screen and (max-width: 768px) {
+    td:last-of-type {
+        padding-right: 10%;
+    }
+
+    td:last-of-type button {
+        font-size: .8rem;
+        letter-spacing: 0;
+    }
+
+    tr {
+        font-size: .9rem;
+    }
+}
+
+@media screen and (max-width: 676px) {
+    tr {
+        font-size: .8rem;
+    }
+}
+
+@media screen and (max-width: 642px) {
+    tr {
+        font-size: .75rem;
+    }
+    td:last-of-type {
+        padding-right: 5%;
+        margin-right: 2vw;
+    }
+    td:last-of-type button {
+        font-size: .75rem;
+    }
+    tr th:nth-of-type(1), tr td:nth-of-type(1) {
+        display: none; 
+    }
+}
+
+@media screen and (max-width: 495px) {
+    tr th:nth-of-type(3), tr td:nth-of-type(3) {
+        display: none; 
+    }
+}
+
+@media screen and (max-width: 470px) {
+}
+
+@media screen and (max-width: 350px) {
+    tr th:nth-of-type(2), tr td:nth-of-type(2) {
+        display: none; 
+    }
+    
+    tr td:nth-of-type(3) {
+        padding-left: 12%;
+    }
+}

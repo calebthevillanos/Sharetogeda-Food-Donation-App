@@ -1,0 +1,395 @@
+:root {
+    --color: #0000FF;
+}
+
+body {
+    color: #312c2e;
+}
+
+header {
+    width: 100%;
+    height: 10vh;
+}
+
+nav#navbar {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+section#top-info {
+    display: flex;
+    width: 80%;
+    height: 30vh;
+    margin: 3% auto;
+    /* background-color: #ffeeff; */
+}
+
+#user-logo {
+    margin-right: 4.5vw;
+    width: 20%;
+    background-color: #312c2e;
+    color: #FFF;
+    font-size: 8rem;
+    text-align: center;
+}
+
+#initial {
+    display: block;
+    line-height: 1.2;
+}
+
+#user-info {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+}
+
+#top-user-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 40%;
+}
+
+#top-user-info h1 {
+    font-size: 2.5rem;
+}
+
+#top-user-info #time-joined {
+    display: flex;
+    align-items: center;
+    font-size: .8rem;
+}
+
+#time-joined > span {
+    margin-left: .4vw;
+}
+
+#bottom-user-info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+    margin-right: 10vw;
+}
+
+.info-container > span {
+    font-size: .85rem;
+    font-weight: 600;
+}
+
+.top-donation > span {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #22AB94;
+    margin-right: 7px;
+}
+
+/**************** FORM STYLING */
+#change-info {
+    margin: 5vh auto;
+    width: 40%;
+}
+
+#change-info .form {
+    padding: 3vh 2vw;
+    border: 1px solid #CCC;
+    border-radius: 10px;
+    transition: border .5s ease-in-out;
+}
+
+#change-info .form:hover {
+    border-color: var(--color);
+}
+
+#password-form {
+    display: none;
+}
+
+.form-head {
+    margin: 0 0 8vh;
+}
+
+.form-head h3 {
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.form-head span {
+    font-size: .9rem;
+}
+
+.form-body {
+    font-size: .8rem;
+}
+
+.form-body .entry {
+    margin-bottom: 4vh;
+}
+
+.form-body button, .btn {
+    padding: 0 1vw;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--color);
+    color: #FFF;
+    height: 100%;
+}
+
+.submit-container {
+    height: 5vh;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
+
+.btn:active {
+    transform: translateY(4px);
+}
+
+.btn.cancel {
+    margin-right: 1vw;
+    background-color: #FFF;
+    color: #312c2e;
+    border: 1.5px solid var(--color);
+}
+
+.btn.cancel:hover {
+    background-color: var(--color);
+    color: #FFF;
+}
+
+.form-body .entry {
+    display: flex;
+    width: 100%;
+    height: 5vh;
+    position: relative;
+}
+
+.entry label {
+    width: 15vw;
+}
+
+.entry input {
+    padding: 0 .5vw;
+    width: 60%;
+    border: 1px solid #ccc;
+    transition: border .5s ease-in-out;
+}
+
+.entry input:hover {
+    border-color: #312c2e;
+}
+
+.entry input:focus {
+    outline: none;
+    border-color: var(--color);
+}
+
+.entry i.dt {
+    position: absolute;
+    top: 1.4vh;
+    right: .5vw;
+}
+
+#email-input {
+    display: none;
+}
+
+.submit-container {
+    width: 100%;
+    text-align: right;
+}
+
+#error-message {
+    position: relative;
+    top: -4vh;
+    left: 42%;
+    color: var(--color);
+}
+
+@media screen and (max-width: 965px) {
+    #user-logo {
+        width: 20%;
+        line-height: 1;
+    }
+}
+
+@media screen and (max-width: 890px) {
+    #user-logo {
+        width: 25%;
+    }
+    .info-container:nth-of-type(2) {
+        margin-right: 0;
+    }
+    #change-info {
+        width: 50%;
+    }
+    .entry {
+        justify-content: space-between;
+    }
+}
+
+@media screen and (max-width: 820px) {
+    #change-info {
+        width: 60%;
+    }
+
+    .entry label {
+        width: 20vw;
+    }
+
+    .info-container > span{
+        font-size: .8rem;
+    }
+}
+
+/* @media screen and (max-width: 750px) {
+} */
+
+@media screen and (max-width: 700px) {
+    #user-logo {
+        width: 30%;
+    }
+    #top-info {
+        height: fit-content !important;
+    }
+    #user-logo {
+        width: 30%;
+        height: fit-content !important;
+    }
+    #top-user-info {
+        height: 60%;
+    }
+    #bottom-user-info {
+        margin-top: 25%;
+        margin-left: -40%;
+        width: fit-content;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    #user-logo {
+        width: 40%;
+        font-size: 6rem;
+    }
+    #bottom-user-info {
+        margin-left: -45%;
+        margin-top: 20%;
+    }
+    #change-info {
+        width: 70%;
+    }
+    .entry label {
+        width: 25vw;
+    }
+    .form-body button, .btn {
+        padding: 0 2vw;
+    }
+}
+
+@media screen and (max-width: 530px) {
+    #user-logo {
+        font-size: 5rem;
+    }
+    .info-container {
+        margin-right: 8vw;
+    }
+}
+
+@media screen and (max-width: 490px) {
+    #user-logo {
+        font-size: 5rem;
+    }
+    .info-container > span {
+        font-size: .7rem;
+    }
+    #change-info {
+        width: 80%;
+    }
+    .entry label {
+        width: 30vw;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    #top-user-info h1 {
+        font-size: 2rem;
+    }
+    section#top-info {
+        width: 90%;
+    }
+    .form-head h3 {
+        font-size: 1.2rem;
+    }
+    .entry label {
+        font-size: .75rem;
+    }
+}
+
+@media screen and (max-width: 370px) {
+    #change-info {
+        width: 90%;
+    }
+    .entry label {
+        width: 35vw;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    #user-logo {
+        font-size: 4rem;
+    }
+    #top-user-info h1 {
+        font-size: 1.5rem;
+    }
+    #bottom-user-info {
+        margin-top: 30%;
+    }
+    .info-container:nth-of-type(2) {
+        margin-right: 0;
+    }
+    #change-info .form {
+        padding-left: 4vw;
+    }
+    .form-head {
+        margin: 0 0 5vh;
+    }
+    .form-body .entry {
+        flex-direction: column;
+        margin-bottom: 6vh;
+    }
+    .entry input {
+        width: 100%;
+        height: 5vh;
+        padding: .5vh 1.5vw;
+    }
+    .form-body button {
+        padding: 1vh 2vw;
+        width: fit-content;
+    }
+    .entry i.dt {
+        top: 4.2vh;
+        right: 1.5vw;
+    }
+    #error-message {
+        left: 0;
+    }
+}
+
+@media screen and (max-width: 325px) {
+    .info-container > span {
+        font-size: .65rem;
+    }
+    .entry label {
+        width: 100%;
+    }
+}

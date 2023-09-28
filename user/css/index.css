@@ -1,0 +1,196 @@
+:root {
+    --font-color: #323334;
+}
+
+body {
+    display: flex;
+    overflow: hidden;
+}
+
+section#left-pane {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 5vh;
+    width: 25%;
+    background-color: #2740B1;
+    /* box-shadow: 0 0 30px 0 inset #000; */
+}
+
+#user {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    /* position: absolute;
+    top: 0;
+    left: 0; */
+}
+
+#user i {
+    border-radius: 64px;
+    /* font-size: 8rem; */
+    font-size: 10vw;
+    background-color: #FFF;
+}
+
+#user span {
+    display: block;
+    margin-top: 2vh;
+    color: #FFF;
+}
+
+#features {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5vh;
+    margin-top: 5vh;
+    padding: 0 3vw;
+    height: 45vh;
+    width: 100%;
+}
+
+.feature {
+    padding: 3vh 0;
+    padding-left: 2vw;
+    color: #FFF;
+    text-decoration: none;
+    font-weight: bold;
+    /* border-radius: 8px; */
+    position: relative;
+    overflow: hidden;
+}
+
+.feature:hover {
+    background-color: #4AEF;
+}
+
+.feature.active {
+    background-color: #4AEF;
+}
+
+.feature.active::before {
+    content: "";
+    height: 100%;
+    background-color: #0000FF;
+    width: 2%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/** RIGHT-PANE */
+
+section#right-pane {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    height: 100vh;
+}
+
+#right-pane main {
+    position: relative;
+    height: calc(100% - 10vh);
+}
+
+#right-pane main #frame {
+    width: 100%;
+    height: 100%;
+    background-color: #4AEFF1;
+    background-color: #E5E6E8;
+}
+
+#right-pane main #overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (min-width: 2560px) {
+    #settings-btn {
+        width: 40px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .feature {font-size: .8rem;}
+    .svg{width: 2.5vw;}
+    .svg:nth-of-type(2) {width: 2vw;}
+}
+
+@media screen and (max-width: 900px) {   
+    #user span {font-size: 1.5vw;}
+}
+
+@media screen and (max-width: 800px) {
+    #user span {font-size: 2vw;}
+    .feature {font-size: .7rem;}
+    #right-pane main h2 {font-size: 1.2rem;}
+}
+
+@media screen and (max-width: 725px) {
+    .feature {font-size: .65rem;}
+    #settings.active {width: 30%;}
+    #settings.active a {font-size: .9rem;}
+    #signout-form input[type=submit] {padding: 1.5vh 3vw;}
+}
+
+@media screen and (max-width: 640px) {
+    #features{padding-right: 2vw;}
+    #right-pane main h2 {font-size: 1rem;}
+    .svg {width: 3vw;}
+    .svg:nth-of-type(2) {width: 2.5vw;}
+}
+
+@media screen and (max-width: 600px) {
+    section#left-pane {position: absolute;top: 10vh;left: -100%;z-index: 1;
+        width: 40%;height: calc(100% - 10vh);box-shadow: 2px 5px 5px 0 #C3C4C6;
+        transition: left 2s cubic-bezier(1,1.38,.03,.96);}
+    section#left-pane.active {left: 0 !important;}
+    #user span {font-size: 3vw;}
+    #features{margin-top: 8vh;}
+    .feature {font-size: 1rem;}
+    section#right-pane {width: 100%;}
+    #right-pane nav#navbar {padding: 3.5vh 3vw;}
+    #right-pane main {height: 100%;}
+    .svg:first-of-type:not(#settings-btn) {display: none;}
+    #menu-toggler {display: initial;}
+    .svg:nth-of-type(2) {width: 3vw;}
+}
+
+@media screen and (max-width: 500px) {
+    .feature {font-size: .8rem;}
+}
+
+@media screen and (max-width: 440px) {
+    #user span {font-size: 3.5vw;}
+    .feature {font-size: .8rem;}
+    .svg:not(:first-of-type) {width: 3.8vw;}
+    #settings.active {width: 38%;}
+}
+
+@media screen and (max-width: 360px) {
+    #features {margin-top: 5vh;}
+    .feature {font-size: .6rem;}
+    #right-pane nav#navbar {padding: 3.5vh 3.5vw;}
+    .svg:not(:first-of-type) {width: 4.5vw;}
+    .svg:first-of-type {width: 4.5vw;}
+}
+
+@media screen and (max-width: 340px) {
+    #settings.active {width: 45%;}
+}
+
+@media screen and (max-width: 330px) {
+    .svg {width: 5vw;}
+}
+
+@media screen and (max-width: 230px) {
+    .svg {
+        width: 7vw;
+    }
+}

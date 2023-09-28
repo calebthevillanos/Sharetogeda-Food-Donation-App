@@ -1,0 +1,102 @@
+#right-pane nav#navbar {
+    display: flex;
+    z-index: 1;
+    justify-content: space-between;
+    padding: 3.5vh 2vw 3.5vh .3vw;
+    height: 10vh;
+    background-color: #FFF;
+    box-shadow: 2px 1px 5px 1px #777;
+}
+
+.svg {
+    display: block;
+    width: 2vw;
+    height: auto;
+    border: none;
+}
+
+.svg:hover {
+    cursor: pointer;
+}
+
+.svg:first-of-type:not(#settings-btn) {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#menu-toggler {
+    display: none;
+}
+
+.svg:nth-of-type(2) {
+    width: 1.5vw;
+}
+
+#settings-btn {
+    width: 20px;
+}
+
+.svg img {
+    width: 100%;
+    height: 100%;
+}
+
+/** SETTINGS FLYOUT */
+#settings {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    z-index: 100;
+    right: -30%;
+    top: 10vh;
+    width: 20%;
+    height: 20vh;
+    background-color: #FFF;
+    box-shadow: 0 0 5px #C3C4C6;
+    transition: right 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+#settings.active {
+    display: flex;
+}
+
+#settings a {
+    text-decoration: none;
+    color: var(--font-color);
+    font-weight: 500;
+    margin-top: 1vh;
+    padding: 2vh 1vw;
+    height: 35%;
+}
+
+#settings a:hover {
+    background-color: #C3C4C6;
+}
+
+#settings hr {
+    height: 1px;
+}
+
+#settings #signout-form {
+    height: 40%;
+    justify-self: flex-start;
+    align-self: center;
+}
+
+#signout-form input[type=submit] {
+    padding: 2vh 3vw;
+    background-color: #FFF;
+    box-shadow: 0 5px 5px #C3C4C6;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: .9rem;
+    transition: background-color .2s ease-in-out, color .2s ease-in-out;
+}
+
+#signout-form input[type=submit]:hover {
+    background-color: #362F4B;
+    color: #FFF;
+    cursor: pointer;
+}

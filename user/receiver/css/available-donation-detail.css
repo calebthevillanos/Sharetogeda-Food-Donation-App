@@ -1,0 +1,90 @@
+#donation-detail {
+    margin: 7vh 3vw;
+    padding: 3vh 4vw 5vh;
+    background-color: #FFF;
+}
+
+#donation-detail .info-container {
+    margin: 5vh 2vw 0;
+    width: calc(100% - 6vw);
+}
+
+#donation-detail .info-container .entry {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5vh;
+    color: var(--font-color);
+}
+
+#donation-detail .entry .title {
+    font-size: 1.2rem;
+}
+
+#donation-detail #item-entry .item-title,
+#donation-detail #item-entry .item-content {
+    display: inline-block;
+    width: 50%;
+}
+
+#donation-detail .entry .content {
+    margin-top: 1vh;
+    margin-left: 3vw;
+    padding: 2vh 1vw;
+    border-radius: 8px;
+    font-size: 1rem;
+    border-width: 1px;
+    border: 1px solid #000;
+}
+
+#donation-detail .entry .contents {
+    margin-top: 1vh;
+    margin-left: 3vw;
+}
+
+#donation-detail .entry .contents li {
+    border: 1px solid #000;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+#donation-detail .submit {
+    text-align: center;
+}
+
+#donation-detail button {
+    position: relative;
+    padding: 1.5vh 0;
+    height: 100%;
+    width: 150px;
+    font-size: 1rem;
+    letter-spacing: .02rem;
+    background-color: #3C59F4;
+    color: #FFF;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
+    transition: background 400ms;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#donation-detail button:hover {
+    background-color: #2740B1;
+}
+
+span.ripple {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 3000ms linear;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+@keyframes ripple {
+    20% {
+      transform: scale(4);
+      /* opacity: 0; */
+    }
+}

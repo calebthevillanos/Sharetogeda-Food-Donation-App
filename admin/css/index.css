@@ -1,0 +1,965 @@
+body {
+    position: relative;
+    display: flex;
+    color: #000;
+    overflow-x: hidden;
+}
+
+#left-pane {
+    position: sticky;
+    top: 0;
+    width: 25%;
+    height: 100vh;
+    background-color: #2740B1;
+    box-shadow: 2px 0 3px 0 #000;
+}
+
+/* #left-pane:hover {
+    display: none;
+} */
+
+#left-pane .title {
+    padding-top: 1vh;
+    height: 10vh;
+    font-style: italic;
+    text-align: center;
+    color: #FFF;
+}
+
+#left-pane .title .email {
+    display: block;
+    margin-top: -10px;
+    font-weight: normal;
+    font-size: .8rem;
+}
+
+.action-container {
+    margin-top: 15vh;
+}
+
+.action-container .action {
+    padding: 0 !important;
+}
+
+.action .action-btn {
+    font-family: var(--font-family);
+    margin: 1vh 0;
+    padding: 3vh 0;
+    padding-left: 4vw;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    background-color: transparent;
+    color: #FFF;
+    border: 2px solid #FFF;
+    border-style: double;
+    border-left-style: unset;
+    border-right-style: unset;
+    cursor: pointer;
+}
+
+.action .action-btn.active {
+    position: relative;
+    background-color: #FFF;
+    color: #2740B1;
+    border-color: #000;
+}
+
+.action .action-btn.active::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-width: 27px;
+    border-style: solid;
+    border-color: transparent transparent transparent #2740B1;
+}
+
+.action .action-btn:hover {
+    background-color: #FFF;
+    color: #2740B1;
+    border-color: #000;
+}
+
+/** RIGHT-PANE ********************/
+
+#right-pane {
+    /* z-index: -10; */
+    width: 75%;
+    background-color: #E5E6E8;
+}
+
+#settings {
+    width: 200px;
+}
+
+#right-pane main {
+    margin: 1vh 2vw;
+    height: calc(100% - 12vh);
+    overflow: hidden;
+    /* overflow-y: visible; */
+}
+
+#right-pane main > .content {
+    display: none;
+}
+
+#right-pane main > .content.active {
+    display: block;
+}
+
+#right-pane main > .content {
+    width: 100%;
+    /* height: calc(100% - 2vh); */
+}
+
+
+
+
+/* Admin Dashboard */
+
+#right-pane #dashboard {
+    width: 100%;
+    height: calc(100% - 2vh);
+    font-weight: bold;
+}
+
+#right-pane #dashboard h2 {
+    padding: 3.5vh 1.25vw;
+}
+
+#dashboard #info-container {
+    margin-left: 3.55vw;
+    margin-top: 4.8vh;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 5vh;
+}
+
+#dashboard .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 20.5vw;
+    height: 20vh;
+    padding: 2vh 2vw;
+    background-color: #FFF;
+}
+
+#new {
+    color: #2740B1;
+}
+
+#successful {
+    color: green;
+}
+
+#incomplete {
+    color: red;
+}
+
+.amount {
+    display: flex;
+    justify-content: space-between;
+}
+
+.amount span {
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+.amount i {
+    color: var(--font-color);
+    align-self: center;
+    cursor: pointer;
+}
+
+
+
+/* Table-items */
+
+
+
+
+
+/* Donation Table */
+
+.content.table-container {
+    margin: 5vh 0 5vh 2vw;
+    padding-bottom: 5vh;
+    background-color: #FFF;
+}
+
+.table-item {
+    display: none;
+}
+
+.table-item.active {
+    display: block;
+}
+
+.table-item .top-info {
+    display: flex;
+    position: relative;
+    padding: 3.5vh 1.25vw;
+    border-bottom: 1px solid var(--font-color);
+}
+
+.top-info .back-arrow {
+    position: absolute;
+    top: 50%;
+    right: 35px;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.top-info .back-arrow.not-active {
+    display: none;
+}
+
+.content table {
+    margin-left: 5vw;
+    text-align: left;
+    width: calc(100% - 3vw);
+    border-collapse: collapse;
+}
+
+#header {
+    background-color: #FFF;
+}
+
+tr {
+    width: 100%;
+    transition: all .2s ease-in-out;
+}
+
+tr th, tr td {
+    padding: 3vh 0;
+    padding-right: 0;
+}
+
+/* .even {
+    background-color: #4aeefa;
+}
+
+.odd {
+    background-color: #FFF;
+} */
+
+td:last-of-type {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 25%;
+}
+
+#donation-history .view-detail {
+    width: 35%;
+}
+
+#donation-history .view-detail button {
+    padding: 1vh 0;
+    height: 100%;
+    width: 100%;
+    font-size: .9rem;
+    letter-spacing: .02rem;
+    background-color: #3C59F4;
+    color: #FFF;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#donation-history .view-detail button:hover {
+    background-color: #2740B1;
+}
+
+/* Donation History Detail */
+
+#history-detail #info-container {
+    margin: 2vh 2vw 0;
+    width: calc(100% - 6vw);
+}
+
+#history-detail .category {
+    width: 100%;
+}
+
+#history-detail .title {
+    display: block;
+    margin-top: 2vh;
+    text-align: center;
+    color: #2740B1;
+}
+
+#history-detail .category > span {
+    margin-bottom: 2vh;
+}
+
+#history-detail .info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 1vw;
+    width: 100%;
+    /* background-color: grey; */
+}
+
+#history-detail .info h4 {
+    width: 20%;
+    /* background-color: aqua; */
+}
+
+/* #history-detail .info span {
+    margin-left: 3vw;
+} */
+
+/* #history-detail .info .user-id {
+} */
+
+#history-detail .info .user-id:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    color: #2740B1;
+}
+
+#history-detail .track-status {
+    width: 100px;
+    margin-left: 2vw;
+}
+
+#history-detail .track-status button {
+    padding: .5vh 0;
+    height: 100%;
+    width: 100%;
+    font-size: .9rem;
+    letter-spacing: .02rem;
+    background-color: #3C59F4;
+    color: #FFF;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#history-detail .track-status button:hover {
+    background-color: #2740B1;
+}
+
+/* Tracking Status */
+
+#track-status .step-container {
+    margin: 10vh 0 5vh;
+    padding: 0 5vw ;
+}
+
+#track-status .step {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+#track-status .step .status {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    /* width: 12vw; */
+    color: red;
+}
+
+#track-status .status.complete {
+    color: green;
+}
+
+#track-status .change-status {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#track-status .change-status.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+#track-status .change-status button {
+    margin-left: 1vw;
+    cursor: pointer;
+}
+
+#track-status .extra-information,
+#track-status .upload-images > span {
+    font-weight: 600;
+}
+
+#track-status .extra-information > span,
+#track-status .upload-images > span {
+    padding-left: 3vw;
+}
+
+#track-status .extra-information .gallery {
+    display: grid;
+    grid-template-columns: auto auto;
+    row-gap: .4vh;
+    column-gap: .3vw;
+    margin: 2vh 0;
+    padding: 0 5vw;
+}
+
+#track-status .gallery span {
+    grid-column: 1 / 3;
+}
+
+#track-status .gallery input {
+    width: 100%;
+    height: 100%;
+}
+
+#track-status .upload-images {
+    margin-top: 5vh;
+}
+
+#track-status .upload-images form {
+    margin-top: 3vh;
+    padding: 0 5vw;
+}
+
+#track-status .upload-images form button {
+    padding: .3vh .5vw;
+    font-family: var(--font-family);
+    background-color: #3C59F4;
+    color: #FFF;
+    border-width: 1px;
+    border-radius: 5px;
+}
+
+#track-status .upload-images form button:hover {
+    background-color: #2740B1;
+    cursor: pointer;
+}
+
+#track-status #track-location-div {
+    width: fit-content;
+    margin: 5vh auto 0;
+}
+
+#track-status #track-location-div button {
+    padding: .5vh 1vw;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: initial;
+    background-color: #3C59F4;
+    color: #FFF;
+    border: none;
+    border-radius: 5px;
+}
+
+#track-status #track-location-div button:hover {
+    background-color: #2740B1;
+    cursor: pointer;
+}
+
+/* Track Location */
+
+#map {
+    margin-top: 5vh;
+    padding: 0 5vw;
+    width: calc(100% - 2vw);
+    height: 50vh;
+}
+
+#map iframe {
+    width: 100%;
+    height: 100%;
+}
+
+#legend-container {
+    margin-top: 3vh;
+}
+
+#legend-container .legend-title {
+    margin-bottom:  4vh;
+    padding-left: 2vw;
+}
+
+#legends {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    padding: 0 5vw;
+}
+
+.legend {
+    display: flex;
+}
+
+.legend .content {
+    margin-left: .5vw;
+}
+
+#vehicle-content {
+    align-self: center;
+}
+
+
+
+
+
+
+
+
+/* Donors Table/Receivers Table */
+
+#donor-table .donor-name,
+#receiver-table .receiver-name {
+    width: 20%;
+}
+
+#donor-table .email,
+#receiver-table .email {
+    width: 25%;
+}
+
+#donor-table .view-detail,
+#receiver-table .view-detail {
+    width: 35%;
+}
+
+#donor-table .view-detail button,
+#receiver-table .view-detail button {
+    padding: 1vh 0;
+    height: 100%;
+    width: 100%;
+    font-size: .9rem;
+    letter-spacing: .02rem;
+    background-color: #3C59F4;
+    color: #FFF;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#donor-table .view-detail button:hover,
+#receiver-table .view-detail button:hover {
+    background-color: #2740B1;
+}
+
+/* Donor Detail Table/Receiver Detail Table */
+#donor-detail .info-container,
+#receiver-detail .info-container {
+    margin: 2vh 2vw 0;
+    width: calc(100% - 6vw);
+}
+
+#donor-detail .info-container .entry,
+#receiver-detail .info-container .entry {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5vh;
+    color: var(--font-color);
+}
+
+#donor-detail .entry input,
+#receiver-detail .entry input {
+    margin-top: 1vh;
+    padding: 2vh 1vw;
+    border-radius: 8px;
+    font-size: 1rem;
+    border-width: 1px;
+}
+
+#donor-detail .entry input:focus,
+#receiver-detail .entry input:focus {
+    outline: none;
+    border-color: #2740B1;
+    outline-color: #2740B1;
+}
+
+#donor-detail input[type="submit"],
+#receiver-detail input[type="submit"] {
+    padding: 1.5vh 0;
+    height: 100%;
+    width: 120px;
+    font-size: .9rem;
+    letter-spacing: .02rem;
+    background-color: #3C59F4;
+    color: #FFF;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#donor-detail input[type="submit"]:hover,
+#receiver-detail input[type="submit"]:hover {
+    background-color: #2740B1;
+}
+
+
+
+
+@media screen and (min-width: 2560px) {
+    #settings-btn {
+        width: 40px;
+    }
+}
+
+@media screen and (max-width: 1240px) {
+    #donor-table .view-detail button,
+    #receiver-table .view-detail button {
+        font-size: .8rem;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    #donor-table td:last-of-type,
+    #receiver-table td:last-of-type {
+        padding-right: 20%;
+    }
+}
+
+@media screen and (max-width: 1055px) {
+    .content #donor-table,
+    .content #receiver-table {
+        font-size: .9rem;
+    }
+
+    #donor-table .view-detail,
+    #receiver-table .view-detail {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .content table,
+    #donation-history .view-detail button {
+        font-size: .9rem;
+    }
+
+    #donor-table .donor-name,
+    #receiver-table .receiver-name {
+        width: 15%;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .content table,
+    #donation-history .view-detail button,
+    #donor-table .view-detail button,
+    #receiver-table .view-detail button {
+        font-size: .85rem;
+    }
+    td:last-of-type {
+        padding-right: 20%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+
+    
+    #legends {grid-template-columns: auto auto;}
+    .legend {margin-bottom: 2vh;}
+    .legend:nth-of-type(3) {grid-column: 1 / 3;justify-self: center;}
+
+
+    .content #donor-table table,
+    .content #receiver-table table {
+        font-size: .8rem;
+    }
+    #donor-table th:first-of-type,
+    #donor-table td:first-of-type,
+    #receiver-table th:first-of-type,
+    #receiver-table td:first-of-type {
+        width: 14%;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    #dashboard #info-container {
+        grid-template-columns: auto auto;
+        column-gap: 0;
+    }
+    #dashboard .info {
+        width: 30vw;
+    }
+    #donation-history .view-detail button,
+    #donor-table .view-detail button,
+    #receiver-table .view-detail button {
+        font-size: .6rem;
+    }
+}
+
+@media screen and (max-width: 810px) {
+    th:nth-of-type(3),
+    td:nth-of-type(3) {
+        display: none;
+    }
+    .content table,
+    #donation-history .view-detail button,
+    #donor-table .view-detail button,
+    #receiver-table .view-detail button {
+        font-size: .8rem;
+    }
+    #donor-table th:first-of-type,
+    #donor-table td:first-of-type,
+    #receiver-table th:first-of-type,
+    #receiver-table td:first-of-type {
+        width: 20%;
+    }
+    #donor-table th:nth-of-type(2),
+    #donor-table td:nth-of-type(2),
+    #receiver-table th:nth-of-type(2),
+    #receiver-table td:nth-of-type(2) {
+        width: 25%;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    #left-pane .title {
+        padding-top: 2vh;
+        font-size: 1.2rem;
+    }
+    
+    #left-pane .title .email {
+        font-size: .7rem;
+    }
+    .action .action-btn.active::before {
+        top: 5px;
+        left: 5px;
+        height: 15px;
+        width: 15px;
+        background-color: #2740B1;
+        border: none;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    td:last-of-type {
+        padding-right: 15%;
+    }
+
+    #track-status {
+        font-size: .9rem;
+    }
+    #legends {font-size: .8rem;}
+}
+
+@media screen and (max-width: 650px) {
+    #left-pane {
+        width: 35%;
+    }
+    #dashboard #info-container {
+        grid-template-columns: auto;
+        /* width: 100%; */
+    }
+    #dashboard .info {
+        width: 100%;
+    }
+    #donation-history .view-detail button {
+        font-size: .6rem;
+    }
+    #track-status {
+        font-size: .75rem;
+    }
+    #donor-table th:first-of-type,
+    #donor-table td:first-of-type,
+    #receiver-table th:first-of-type,
+    #receiver-table td:first-of-type {
+        width: 30%;
+    }
+    #donor-table th:nth-of-type(2),
+    #donor-table td:nth-of-type(2),
+    #receiver-table th:nth-of-type(2),
+    #receiver-table td:nth-of-type(2) {
+        width: 30%;
+    }
+    #donor-table th:last-of-type,
+    #donor-table td:last-of-type span,
+    #receiver-table th:last-of-type,
+    #receiver-table td:last-of-type span {
+        display: none;
+    }
+
+    #donor-table td:last-of-type,
+    #receiver-table td:last-of-type {
+        padding-right: 25%;
+    }
+    
+    #donor-table .view-detail,
+    #receiver-table .view-detail {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    section#left-pane {position: absolute;top: 10vh;left: -100%;z-index: 1;
+        width: 45%;height: calc(100% - 10vh);
+        transition: left 2s cubic-bezier(1,1.38,.03,.96);}
+    section#left-pane.active {left: 0 !important;}
+    #user span {font-size: 3vw;}
+    section#right-pane {width: 100%;}
+    #right-pane nav#navbar {padding: 3.5vh 3vw;}
+    #right-pane main {height: 100%;}
+    .svg:first-of-type:not(#settings-btn) {display: none;}
+    #menu-toggler {display: initial;width: 20px;}
+
+    #track-status {
+        font-size: unset;
+    }
+    #legends {font-size: unset;}
+
+
+    #donor-table th:first-of-type,
+    #donor-table td:first-of-type,
+    #receiver-table th:first-of-type,
+    #receiver-table td:first-of-type {
+        width: 15%;
+    }
+    #donor-table th:nth-of-type(2),
+    #donor-table td:nth-of-type(2),
+    #receiver-table th:nth-of-type(2),
+    #receiver-table td:nth-of-type(2) {
+        width: 20%;
+    }
+
+    #donor-table th:last-of-type,
+    #donor-table td:last-of-type span,
+    #receiver-table th:last-of-type,
+    #receiver-table td:last-of-type span {
+        display: table-cell;
+    }
+    #donor-table td:last-of-type,
+    #receiver-table td:last-of-type {
+        padding-right: 15%;
+    }
+
+    #donor-table .view-detail,
+    #receiver-table .view-detail {
+        width: 35%;
+    }
+
+    #donor-table .view-detail button,
+    #receiver-table .view-detail button {
+        font-size: .6rem;
+    }
+
+    th:nth-of-type(3),
+    td:nth-of-type(3) {
+        display: table-cell;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .action .action-btn.active::before {
+        height: 10px;
+        width: 10px;
+    }
+
+    #history-detail .info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #history-detail .info:not(#status) h4 {
+        width: 100%;
+    }
+
+    #history-detail #status {
+        flex-direction: row;
+    }
+    #history-detail .track-status {
+        margin-left: 6vw;
+    }
+
+    #donor-table th:first-of-type,
+    #donor-table td:first-of-type,
+    #receiver-table th:first-of-type,
+    #receiver-table td:first-of-type {
+        width: 20%;
+    }
+    #donor-table th:nth-of-type(2),
+    #donor-table td:nth-of-type(2),
+    #receiver-table th:nth-of-type(2),
+    #receiver-table td:nth-of-type(2) {
+        width: 25%;
+    }
+
+    #donor-table th:nth-of-type(3),
+    #donor-table td:nth-of-type(3),
+    #receiver-table th:nth-of-type(3),
+    #receiver-table td:nth-of-type(3) {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 520px) {
+    section#left-pane {width: 50%;}
+    th:nth-of-type(3),
+    td:nth-of-type(3) {
+        display: none;
+    }
+    #track-status, #history-detail, #donations {
+        font-size: .85rem;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    #legends {font-size: .9rem;}
+}
+
+@media screen and (max-width: 420px) {
+    #track-status .step-container {margin-top: 5vh;}
+    #track-status .step .status {width: 100%;justify-content: flex-end;}
+    #track-status .step .status .change-status {margin-left: 1.5vw;}
+    #track-status .step, .extra-information .gallery > span {font-size: .7rem;}
+    #track-status .step {flex-direction: column;margin-bottom: 2vh;padding: 1vh 2vw;
+        border-radius: 5px;box-shadow: 0 2px 5px #C3C4C6;}
+}
+
+@media screen and (max-width: 400px) {
+    #dashboard > h2 {
+        font-size: 1.2rem;
+    }
+    #donations th:nth-of-type(2),
+    #donations td:nth-of-type(2) {
+        display: none;
+    }
+
+    #legends {font-size: .8rem;}
+
+    #donor-table th:first-of-type,
+    #donor-table td:first-of-type,
+    #receiver-table th:first-of-type,
+    #receiver-table td:first-of-type {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    section#left-pane {width: 65%;}
+    #track-status .upload-images form button {
+        margin-top: 3vh;
+        width: 30%;
+        border: none;
+    }
+    #legends {grid-template-columns: auto;font-size: unset;}
+    .legend {grid-column: 1 / 3;}
+    .legend:nth-of-type(3) {justify-self: unset;}
+
+
+}
+
+
+
+@media screen and (min-height: 600px) {
+    .action .action-btn.active::before {
+        border-width: 30px;
+    }
+}
+
+@media screen and (min-height: 1000px) {
+    .action .action-btn.active::before {
+        border-width: 48px;
+    }
+}

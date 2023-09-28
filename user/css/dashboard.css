@@ -1,0 +1,191 @@
+main {
+    margin: 1vh 2vw;
+    height: 100%;
+    border-radius: 8px;
+}
+
+main h2 {
+    /* margin: 0 2vw; */
+    padding: 2vh 0;
+    color: #312c2e;
+}
+
+#container {
+    display: none;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    width: 70%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+}
+
+#container span:not(.child) {
+    font-size: 3rem;
+}
+
+.child {
+    background-image: linear-gradient( 0.25turn, #06629B, #01E496);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#step-one {
+    background-image: linear-gradient( 0.25turn, #06629B, #056F9A);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    top: 200px;
+    transition-delay: 0s;
+    transition-duration: 2s;
+    transition-property: top;
+    transition-timing-function: ease-in;
+}
+
+#step-two {
+    background-image: linear-gradient( 0.25turn, #05709A, #058C9A);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    top: 200px;
+    transition-delay: .5s;
+    transition-duration: 2s;
+    transition-property: top;
+    transition-timing-function: ease-in;
+}
+
+#step-three {
+    background-image: linear-gradient( 0.25turn, #049399, #02C597);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    top: 200px;
+    transition-delay: 2s;
+    transition-duration: 2s;
+    transition-property: top;
+    transition-timing-function: ease-in;
+}
+
+#step-four {
+    background-image: linear-gradient( 0.25turn, #02C997, #01E396);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    top: 200px;
+    transition-delay: 2.5s;
+    transition-duration: 2s;
+    transition-property: top;
+    transition-timing-function: ease-in;
+}
+
+#step-five {
+    background-image: linear-gradient( 0.25turn, #4257D0, 30%, #C54FBC);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    top: 200px;
+    transition-delay: 3.75s;
+    transition-duration: 2s;
+    transition-property: top;
+    transition-timing-function: ease-in;
+}
+
+#phrase {
+    display: block;
+    padding: 2vh 2vw;
+}
+
+#info-container {
+    margin-left: 5vw;
+    margin-top: 5vh;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 5vh;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 27vw;
+    height: 20vh;
+    padding: 2vh 2vw;
+    background-color: #FFF;
+}
+
+#new {
+    color: #2740B1;
+}
+
+#successful {
+    color: green;
+}
+
+#cancelled {
+    color: red;
+}
+
+.amount {
+    display: flex;
+    justify-content: space-between;
+}
+
+.amount span {
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+
+.amount i {
+    color: var(--font-color);
+    align-self: center;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    #info-container {
+        grid-template-columns: auto auto;
+    }
+    .info {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    main {
+        margin-right: 8vw;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .info > span {
+        font-size: .9rem;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    .child {
+        display: none;
+    }
+
+    #phrase {
+        display: initial;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    #phrase {margin: 3.5vh 3.5vw;font-size: 1.2rem;}
+}
+
+@media screen and (max-width: 300px) {
+    #phrase {margin: 3.5vh 3.5vw;font-size: 1rem;}
+}
+
+@media screen and (max-width: 245px) {
+    #phrase {margin: 3.5vh 3.5vw;font-size: .9rem;}
+}
